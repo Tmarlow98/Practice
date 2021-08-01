@@ -41,7 +41,7 @@ public class HelloWorld{
                 if(numbers[i] >= 2147483647){
                     break;
                 }
-                if(numbers[i] >= smallest){
+                if(numbers[i] <= smallest){
                     smallest = numbers[i];
                 }
             }
