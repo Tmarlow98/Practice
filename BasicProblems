@@ -1,0 +1,62 @@
+public class HelloWorld{
+        
+        static String reverse(String input){
+                StringBuilder reverseString = new StringBuilder();
+                reverseString.append(input);
+                reverseString.reverse();
+                return reverseString.toString();
+        }
+        
+        static char[] toCharArray(String input){
+            char[] ch = new char[input.length()];
+            for(int i = 0; i < input.length(); i++){
+                ch[i] = input.charAt(i);
+            }
+            return ch;
+        }
+        
+        static String removeChar(String input, char remove){
+            StringBuilder sb = new StringBuilder();
+            char[] charArray = toCharArray(input);
+            for(char ch : charArray){
+                if(remove != ch){
+                    sb.append(ch);
+                }
+            }
+            return sb.toString();
+        }
+        
+        static String reverseIfOdd(String input){
+            
+            if(input.length() % 2 == 0){
+                return input;
+            } else {
+                return reverse(input);
+            }
+        }
+        
+        static int smallestNumber(int[] numbers){
+            int smallest = numbers[0];
+            for(int i = 0; i < numbers.length; i++){
+                if(numbers[i] >= 2147483647){
+                    break;
+                }
+                if(numbers[i] >= smallest){
+                    smallest = numbers[i];
+                }
+            }
+            return smallest;
+        }
+        
+        public static void main(String []args){
+            try{
+        int[] numbers = {2, 5, 1, 6, 2, 81, -6,2147483647};
+        System.out.println(reverseIfOdd("I went to the park and played with the squirrels!"));
+        System.out.println(removeChar("Hello World", 'l'));
+        System.out.println("Smallest number in array is: " + smallestNumber(numbers));
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        
+    }
